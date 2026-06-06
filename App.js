@@ -12,13 +12,6 @@ import {
 // import { random } from "lodash";
 // FIND OUT HOW TO IMPORT RANDOMISATION FUNCTIONALITY - LODASH CAUSING ERRORS CURRENTLY
 
-
-// Replace lylac with: 88D498 
-
-// Replace pink with: 1A936F
-
-// Replace turqoise with: 114B5F
-
 export default function App() {
   const [newGenre, setNewGenre] = useState(""); //at some point take random words from arrays, use setNewGenre function to plug the array strings into a text field to output to user
   const genreArray = [
@@ -78,7 +71,7 @@ export default function App() {
           style={{
             width: 80,
             height: 40,
-            backgroundColor: "#62ECE1",
+            backgroundColor: "#114B5F",
             fontSize: 14,
             justifyContent: "center",
             alignItems: "center",
@@ -108,7 +101,7 @@ export default function App() {
             </Text>
             <TouchableOpacity
               style={{
-                backgroundColor: "#62ECE1",
+                backgroundColor: "#114B5F",
                 alignItems: "center",
                 justifyContent: "center",
                 width: "20%",
@@ -139,7 +132,7 @@ export default function App() {
         style={{
           width: 120,
           height: 60,
-          backgroundColor: "#62ECE1",
+          backgroundColor: "#114B5F",
           fontSize: 20,
           justifyContent: "center",
           alignItems: "center",
@@ -159,7 +152,7 @@ export default function App() {
       </TouchableOpacity>
 
       <ScrollView
-        style={{ width: "100%", height: "100%", backgroundColor: "#BAE9FF" }}
+        style={{ width: "100%", height: "100%", backgroundColor: "#88D498" }}
         contentContainerStyle={{
           justifyContent: "center",
           alignItems: "center",
@@ -628,7 +621,7 @@ inside each of those, have an image - when setting image sizes, set width and he
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FEDDFF",
+    backgroundColor: "#1A936F",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -644,7 +637,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
-    backgroundColor: "#FEDDFF",
+    backgroundColor: "#1A936F",
   },
 });
 
