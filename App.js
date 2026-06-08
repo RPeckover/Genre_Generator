@@ -27,6 +27,8 @@ export default function App() {
     "Rock",
     "Hip-hop",
   ];
+  // array storing names of large music genres 
+  // add funk?
 
   const modifyerArray = [
     "Psychadelic",
@@ -46,21 +48,23 @@ export default function App() {
     "Deep",
     "Progressive",
   ];
+  // array that stores music subgenre terms 
 
   const [modalVisible, setModalVisable] = useState(false);
 
   const imageSelect = useState(null); //IS THIS WORKABLE AS A STATE VARIABLE FOR SECOND RANDOM GENRE FUNCTION
 
   const [buttonsPressed, setButtonPressed] = useState(0);
+  // buttonsPressed allows storage of the number of buttons a user has pressed to prevent them pressing too many at once
 
   const [tempGenre, setTempGenre] = useState("");
 
   const randomGenre = () => {};
 
   const emptyGenerate = () =>
-    modifyerArray[random(modifyerArray.length - 1)] +
+    modifyerArray[math.random(modifyerArray.length - 1)] +
     " " +
-    genreArray[random(genreArray.length - 1)];
+    genreArray[math.random(genreArray.length - 1)];
 
   //setNewGenre genreArray
 
@@ -119,12 +123,7 @@ export default function App() {
       {/* Put code for modal button to make modal visible (place in upper right corner) */}
 
       <Text
-        style={{
-          marginTop: 10,
-          marginBottom: 25,
-          textAlign: "center",
-          fontSize: 30,
-        }}
+        style={ new_genre_text }
       >
         {newGenre}
       </Text>
@@ -143,7 +142,7 @@ export default function App() {
           if (tempGenre === "") {
             setNewGenre(emptyGenerate());
           } else setNewGenre(tempGenre);
-          setButtonPressed(0); //sets the buttonPressed state to 0
+          setButtonPressed(0); // sets the buttonPressed state to 0, preventing the 'too many buttons pressed' state / alert from triggering erroneously 
           setTempGenre("");
         }}
         /*PRINT tempGenre IN THE GENRE GENERATION TEXT SPOT - making tempGenre eaqual to newGenre doesnt work*/
@@ -152,7 +151,7 @@ export default function App() {
       </TouchableOpacity>
 
       <ScrollView
-        style={{ width: "100%", height: "100%", backgroundColor: "#88D498" }}
+        style={ styles.scrollView }
         contentContainerStyle={{
           justifyContent: "center",
           alignItems: "center",
@@ -632,12 +631,21 @@ const styles = StyleSheet.create({
     margin: 10,
     resizeMode: "contain",
   },
-  //check if it's possible to use % for image size rather than hard coding
   modal: {
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
     backgroundColor: "#1A936F",
   },
+  scrollView: {
+    width: "100%", 
+    height: "100%", 
+    backgroundColor: "#88D498",
+  },
+  new_genre_text: {
+    marginTop: 10,
+    marginBottom: 25,
+    textAlign: "center",
+    fontSize: 30,
+  },
 });
-
