@@ -30,7 +30,7 @@ export default function App() {
   // array storing names of large music genres 
   // add funk?
 
-  const modifyerArray = [
+  const modifierArray = [
     "Psychadelic",
     "Italo",
     "Heavy",
@@ -58,13 +58,16 @@ export default function App() {
   // buttonsPressed allows storage of the number of buttons a user has pressed to prevent them pressing too many at once
 
   const [tempGenre, setTempGenre] = useState("");
+  // tempGenre stores the concatenated string of text selected when using the touchable opacity genre images
 
   const randomGenre = () => {};
 
   const emptyGenerate = () =>
-    modifyerArray[math.random(modifyerArray.length - 1)] +
+    modifierArray[Math.floor(Math.random * modifierArray.length - 1)] +
     " " +
-    genreArray[math.random(genreArray.length - 1)];
+    genreArray[Math.floor(Math.random * genreArray.length - 1)];
+//CHECK IF MATH.RANDOM WORKS AS SUBSTITUTE TO LODASH RANDOMISATION
+
 
   //setNewGenre genreArray
 
@@ -72,47 +75,24 @@ export default function App() {
     <View style={styles.container}>
       <>
         <TouchableOpacity
-          style={{
-            width: 80,
-            height: 40,
-            backgroundColor: "#114B5F",
-            fontSize: 14,
-            justifyContent: "center",
-            alignItems: "center",
-            marginBottom: 20,
-            borderRadius: 10,
-            alignSelf: "flex-end",
-            marginTop: 25,
-            marginRight: 5,
-          }}
+          style={ helpBtn }
           onPress={() => setModalVisable(true)}
+          // displays the 'help' modal's contents upon press
         >
           <Text style={{ fontSize: 14 }}>Help</Text>
         </TouchableOpacity>
         <Modal visible={modalVisible} animationType={"slide"}>
-          <View style={styles.modal}>
+          <View style={styles.helpModal}>
             <Text
-              style={{
-                fontSize: 16,
-                marginTop: 25,
-                marginBottom: 10,
-                textAlign: "center",
-                padding: 30,
-              }}
+              style={ styles.helpModalText }
             >
               Generate a custom genre by clicking 'generate' or by selecting
               images from the scroll bar!
             </Text>
             <TouchableOpacity
-              style={{
-                backgroundColor: "#114B5F",
-                alignItems: "center",
-                justifyContent: "center",
-                width: "20%",
-                height: 40,
-                borderRadius: 10,
-              }}
+              style={ helpCloseBtn }
               onPress={() => setModalVisable(false)}
+              // closes 'help' modal
             >
               <Text style={{ fontFamily: "sans-serif" }}>Done</Text>
             </TouchableOpacity>
@@ -123,21 +103,12 @@ export default function App() {
       {/* Put code for modal button to make modal visible (place in upper right corner) */}
 
       <Text
-        style={ new_genre_text }
+        style={ newGenreText }
       >
         {newGenre}
       </Text>
       <TouchableOpacity
-        style={{
-          width: 120,
-          height: 60,
-          backgroundColor: "#114B5F",
-          fontSize: 20,
-          justifyContent: "center",
-          alignItems: "center",
-          marginBottom: 20,
-          borderRadius: 10,
-        }}
+        style={ newGenreBtn }
         onPress={() => {
           if (tempGenre === "") {
             setNewGenre(emptyGenerate());
@@ -158,12 +129,7 @@ export default function App() {
         }}
       >
         <View
-          style={{
-            flexWrap: "wrap",
-            width: "80%",
-            flexDirection: "row",
-            justifyContent: "center",
-          }}
+          style={ view }
         >
           <TouchableOpacity
             onPress={() => {
@@ -594,7 +560,8 @@ export default function App() {
             <Image
               source={require("./assets/progressive.jpg")}
               style={styles.image}
-            ></Image>
+            ></Image> 
+            {/* the image contained within the touchable opacity acts as its interactable area, creating an image-button */}
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -611,13 +578,14 @@ inside each of those, have an image - when setting image sizes, set width and he
 
 //Math.floor(Math.random * INSERT ARRAY LENGTH)
 
-//use %s for slacling to keep consistant accross devices
+//use %s for scaling to keep consistant accross devices?
 
 //Feedback - make sure user knows they have selected an image and can select more
 
 //could have two columns of images using flex wrap, make images a little larger
 
 const styles = StyleSheet.create({
+  // main stylesheet used for all classes 
   container: {
     flex: 1,
     backgroundColor: "#1A936F",
@@ -631,7 +599,7 @@ const styles = StyleSheet.create({
     margin: 10,
     resizeMode: "contain",
   },
-  modal: {
+  helpModal: {
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
@@ -642,10 +610,54 @@ const styles = StyleSheet.create({
     height: "100%", 
     backgroundColor: "#88D498",
   },
-  new_genre_text: {
+  view: {
+    flexWrap: "wrap",
+    width: "80%",
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  newGenreText: {
     marginTop: 10,
     marginBottom: 25,
     textAlign: "center",
     fontSize: 30,
+  },
+  newGenreBtn: {
+    width: 120,
+    height: 60,
+    backgroundColor: "#114B5F",
+    fontSize: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+    borderRadius: 10,
+  },
+  helpBtn: {
+    width: 80,
+    height: 40,
+    backgroundColor: "#114B5F",
+    fontSize: 14,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+    borderRadius: 10,
+    alignSelf: "flex-end",
+    marginTop: 25,
+    marginRight: 5,
+  },
+  helpModalText: {
+    fontSize: 16,
+    marginTop: 25,
+    marginBottom: 10,
+    textAlign: "center",
+    padding: 30,
+  },
+  helpCloseBtn: {
+    backgroundColor: "#114B5F",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "20%",
+    height: 40,
+    borderRadius: 10,
   },
 });
