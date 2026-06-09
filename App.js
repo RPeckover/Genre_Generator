@@ -9,8 +9,6 @@ import {
   Modal,
   TouchableOpacity,
 } from "react-native";
-// import { random } from "lodash";
-// FIND OUT HOW TO IMPORT RANDOMISATION FUNCTIONALITY - LODASH CAUSING ERRORS CURRENTLY
 
 export default function App() {
   const [newGenre, setNewGenre] = useState(""); //at some point take random words from arrays, use setNewGenre function to plug the array strings into a text field to output to user
@@ -27,7 +25,7 @@ export default function App() {
     "Rock",
     "Hip-hop",
   ];
-  // array storing names of large music genres 
+  // array storing names of 'umbrella' music genres 
 
   const modifierArray = [
     "Psychadelic",
@@ -62,11 +60,10 @@ export default function App() {
   const randomGenre = () => {};
 
   const emptyGenerate = () =>
-    modifierArray[Math.floor(Math.random * modifierArray.length - 1)] +
+    modifierArray[Math.floor(Math.random() * modifierArray.length)] +
     " " +
-    genreArray[Math.floor(Math.random * genreArray.length - 1)];
-//CHECK IF MATH.RANDOM WORKS AS SUBSTITUTE TO LODASH RANDOMISATION
-
+    genreArray[Math.floor(Math.random() * genreArray.length)];
+  // selects a random item within the modifier array and genre array and concatenates them
 
   //setNewGenre genreArray
 
@@ -85,8 +82,8 @@ export default function App() {
             <Text
               style={ styles.helpModalText }
             >
-              Generate a custom genre by clicking 'generate' or by selecting
-              images from the scroll bar!
+              Generate a custom genre by pressing 'Generate' or by selecting 
+              up to 5 images and then pressing 'Generate'! Have fun and experiment!
             </Text>
             <TouchableOpacity
               style={ styles.helpCloseBtn }
@@ -127,6 +124,7 @@ export default function App() {
         contentContainerStyle={{
           justifyContent: "center",
           alignItems: "center",
+          // styles child views to center dynamically within the ScrollView
         }}
       >
         <View
@@ -602,15 +600,9 @@ set up two horizontal scrollviews (one for each array) inside of each have touch
 inside each of those, have an image - when setting image sizes, set width and height to 'undefined', set the resize mode to 'contain'
 */
 
-//if using horizonal scroll, direct the user to scroll in this manner with UI (arrow plus the word 'scroll' or similar)
-
-//Math.floor(Math.random * INSERT ARRAY LENGTH)
-
 //use %s for scaling to keep consistant accross devices?
 
 //Feedback - make sure user knows they have selected an image and can select more
-
-//could have two columns of images using flex wrap, make images a little larger
 
 const styles = StyleSheet.create({
   // main stylesheet used for all classes 
