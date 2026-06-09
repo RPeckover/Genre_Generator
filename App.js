@@ -74,7 +74,7 @@ export default function App() {
     <View style={styles.container}>
       <>
         <TouchableOpacity
-          style={ helpBtn }
+          style={ styles.helpBtn }
           onPress={() => setModalVisable(true)}
           // displays the 'help' modal's contents upon press
         >
@@ -89,7 +89,7 @@ export default function App() {
               images from the scroll bar!
             </Text>
             <TouchableOpacity
-              style={ helpCloseBtn }
+              style={ styles.helpCloseBtn }
               onPress={() => setModalVisable(false)}
               // closes 'help' modal
             >
@@ -102,13 +102,13 @@ export default function App() {
       {/* Put code for modal button to make modal visible (place in upper right corner) */}
 
       <Text
-        style={ newGenreText }
+        style={ styles.newGenreText }
       >
         {newGenre}
       </Text>
       <TouchableOpacity
       // new genre button
-        style={ newGenreBtn }
+        style={ styles.newGenreBtn }
         onPress={() => {
           if (tempGenre === "") {
             setNewGenre(emptyGenerate());
@@ -130,7 +130,7 @@ export default function App() {
         }}
       >
         <View
-          style={ view }
+          style={ styles.view }
         >
           <TouchableOpacity
           // "Classical" image-button
