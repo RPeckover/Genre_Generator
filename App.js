@@ -28,7 +28,6 @@ export default function App() {
     "Hip-hop",
   ];
   // array storing names of large music genres 
-  // add funk?
 
   const modifierArray = [
     "Psychadelic",
@@ -108,13 +107,15 @@ export default function App() {
         {newGenre}
       </Text>
       <TouchableOpacity
+      // new genre button
         style={ newGenreBtn }
         onPress={() => {
           if (tempGenre === "") {
             setNewGenre(emptyGenerate());
+            // generates a randomised genre from the 'genre' and 'modifier' arrays
           } else setNewGenre(tempGenre);
           setButtonPressed(0); // sets the buttonPressed state to 0, preventing the 'too many buttons pressed' state / alert from triggering erroneously 
-          setTempGenre("");
+          setTempGenre(""); // empties the tempGenre variable
         }}
         /*PRINT tempGenre IN THE GENRE GENERATION TEXT SPOT - making tempGenre eaqual to newGenre doesnt work*/
       >
@@ -132,6 +133,7 @@ export default function App() {
           style={ view }
         >
           <TouchableOpacity
+          // "Classical" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -148,6 +150,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Country" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -164,6 +167,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Cowboy" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -180,6 +184,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Dance" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -196,6 +201,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Disco" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -212,6 +218,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Egyptian" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -228,6 +235,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Electronic" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -244,6 +252,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Euro" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -260,6 +269,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Halloween" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -276,6 +286,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Heavy" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -292,6 +303,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Hip-Hop" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -308,6 +320,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "House" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -324,6 +337,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Industrial" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -340,6 +354,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Italo" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -356,6 +371,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Jazz" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -372,6 +388,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Medieval" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -388,6 +405,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Metal" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -404,6 +422,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Pirate" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -420,6 +439,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Pop" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -436,6 +456,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Power" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -452,6 +473,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Psychadelic" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -468,6 +490,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Rap" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -484,6 +507,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Deep" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -500,6 +524,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Robot" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -516,6 +541,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Rock" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -532,6 +558,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Space" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
@@ -548,6 +575,7 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableOpacity
+          // "Progressive" image-button
             onPress={() => {
               if (buttonsPressed > 4) {
                 alert("Too many images selected");
