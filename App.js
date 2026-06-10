@@ -1,4 +1,3 @@
-// import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -11,7 +10,7 @@ import {
 } from "react-native";
 
 export default function App() {
-  const [newGenre, setNewGenre] = useState(""); //at some point take random words from arrays, use setNewGenre function to plug the array strings into a text field to output to user
+  const [newGenre, setNewGenre] = useState(""); 
   const genreArray = [
     "Electronic",
     "House",
@@ -47,9 +46,9 @@ export default function App() {
   ];
   // array that stores music subgenre terms 
 
-  const [modalVisible, setModalVisable] = useState(false);
+  const [modalVisible, setModalVisable] = useState(false); 
 
-  const imageSelect = useState(null); //IS THIS WORKABLE AS A STATE VARIABLE FOR SECOND RANDOM GENRE FUNCTION
+  const imageSelect = useState(null); 
 
   const [buttonsPressed, setButtonPressed] = useState(0);
   // buttonsPressed allows storage of the number of buttons a user has pressed to prevent them pressing too many at once
@@ -64,8 +63,6 @@ export default function App() {
     " " +
     genreArray[Math.floor(Math.random() * genreArray.length)];
   // selects a random item within the modifier array and genre array and concatenates them
-
-  //setNewGenre genreArray
 
   return (
     <View style={styles.container}>
@@ -95,16 +92,13 @@ export default function App() {
           </View>
         </Modal>
       </>
-
-      {/* Put code for modal button to make modal visible (place in upper right corner) */}
-
       <Text
         style={ styles.newGenreText }
       >
         {newGenre}
       </Text>
       <TouchableOpacity
-      // new genre button
+      // new genre generate button
         style={ styles.newGenreBtn }
         onPress={() => {
           if (tempGenre === "") {
@@ -114,7 +108,6 @@ export default function App() {
           setButtonPressed(0); // sets the buttonPressed state to 0, preventing the 'too many buttons pressed' state / alert from triggering erroneously 
           setTempGenre(""); // empties the tempGenre variable
         }}
-        /*PRINT tempGenre IN THE GENRE GENERATION TEXT SPOT - making tempGenre eaqual to newGenre doesnt work*/
       >
         <Text style={{ fontSize: 18 }}>Generate!</Text>
       </TouchableOpacity>
@@ -587,22 +580,13 @@ export default function App() {
               source={require("./assets/progressive.jpg")}
               style={styles.image}
             ></Image> 
-            {/* the image contained within the touchable opacity acts as its interactable area, creating an image-button */}
+            {/* the image contained within the touchable opacity wrapper acts as its interactable area, creating an image-button */}
           </TouchableOpacity>
         </View>
       </ScrollView>
     </View>
   );
 }
-
-/*
-set up two horizontal scrollviews (one for each array) inside of each have touchableOpacity, 
-inside each of those, have an image - when setting image sizes, set width and height to 'undefined', set the resize mode to 'contain'
-*/
-
-//use %s for scaling to keep consistant accross devices?
-
-//Feedback - make sure user knows they have selected an image and can select more
 
 const styles = StyleSheet.create({
   // main stylesheet used for all classes 
