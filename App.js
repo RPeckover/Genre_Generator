@@ -7,6 +7,7 @@ import {
   Image,
   Modal,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
 
 export default function App() {
@@ -65,29 +66,58 @@ export default function App() {
   // selects a random item within the modifier array and genre array and concatenates them
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <>
+      <View style={styles.topBar}>
+        <Image 
+        source={require("./assets/logo.png")}
+        style={styles.logo}
+        >
+        </Image>
         <TouchableOpacity
           style={ styles.helpBtn }
           onPress={() => setModalVisable(true)}
           // displays the 'help' modal's contents upon press
         >
-          <Text style={{ fontSize: 14 }}>Help</Text>
+          <Text style={ styles.buttonText }>Help</Text>
         </TouchableOpacity>
+      </View>
         <Modal visible={modalVisible} animationType={"slide"}>
           <View style={styles.helpModal}>
             <Text
               style={ styles.helpModalText }
             >
-              Generate a custom genre by pressing 'Generate' or by selecting 
-              up to 5 images and then pressing 'Generate'! Have fun and experiment!
+              Create a custom genre by pressing 'Generate' or by selecting up to 5 images and then pressing 'Generate'! 
+              {"\n"}{"\n"}Have fun and experiment!
+              {"\n"}{"\n"}
+              Images credits: {"\n"}{"\n"}
+              Alex Andrews{"\n"}
+              Binyamin Mellish{"\n"}
+              Brett Sayles{"\n"}
+              Briana Amick{"\n"}
+              Clem Ono Jeghuo{"\n"}
+              Eleazar Ceballos{"\n"}
+              Jeremy Bishop{"\n"}
+              Jerome Govender{"\n"}
+              Koolshooters{"\n"}
+              Lorenzo Pacifico{"\n"}
+              Monstera{"\n"}
+              Pavel Danilyuk{"\n"}
+              Pixabay{"\n"}
+              Sharon McCutcheon{"\n"}
+              U{"\n"}
+              Victor Freitas{"\n"}
+              Wendy Wei{"\n"}
+              Wilson Vitorino{"\n"}
+              {"\n"}
+              Sourced courtesy of Pexels
             </Text>
             <TouchableOpacity
               style={ styles.helpCloseBtn }
               onPress={() => setModalVisable(false)}
               // closes 'help' modal
             >
-              <Text style={{ fontFamily: "sans-serif" }}>Done</Text>
+              <Text style={ styles.buttonText }>Done</Text>
             </TouchableOpacity>
           </View>
         </Modal>
@@ -109,7 +139,7 @@ export default function App() {
           setTempGenre(""); // empties the tempGenre variable
         }}
       >
-        <Text style={{ fontSize: 18 }}>Generate!</Text>
+        <Text style={ styles.generateButtonText }>Generate!</Text>
       </TouchableOpacity>
 
       <ScrollView
@@ -584,7 +614,7 @@ export default function App() {
           </TouchableOpacity>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -596,12 +626,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  image: {
-    width: 110,
-    height: 110,
-    aspectRatio: 1,
-    margin: 10,
+  topBar: {
+    flexDirection: "row",
+  },
+  logo: {
+    width: 200,
     resizeMode: "contain",
+    alignSelf: "flex-start",
+    marginLeft: 8,
+    marginRight: 45,
+  },
+  image: {
+    height: 130,
+    aspectRatio: 1,
+    margin: 8,
+    resizeMode: "cover",
+    borderRadius: 10,
   },
   helpModal: {
     alignItems: "center",
@@ -613,12 +653,14 @@ const styles = StyleSheet.create({
     width: "100%", 
     height: "100%", 
     backgroundColor: "#88D498",
+    paddingTop: 8,
   },
   view: {
     flexWrap: "wrap",
     width: "80%",
     flexDirection: "row",
     justifyContent: "center",
+    paddingBottom: 16,
   },
   newGenreText: {
     marginTop: 10,
@@ -646,14 +688,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 10,
     alignSelf: "flex-end",
-    marginTop: 25,
-    marginRight: 5,
+    marginRight: 8,
+    marginLeft: 45,
   },
   helpModalText: {
     fontSize: 16,
     marginTop: 25,
     marginBottom: 10,
-    textAlign: "center",
     padding: 30,
   },
   helpCloseBtn: {
@@ -663,5 +704,16 @@ const styles = StyleSheet.create({
     width: "20%",
     height: 40,
     borderRadius: 10,
+    color: "#ffffff",
+  },
+  buttonText: {
+    fontFamily: "sans-serif",
+    color: "#9fe1ad",
+    fontSize: 14,
+  },
+    generateButtonText: {
+    fontFamily: "sans-serif",
+    color: "#9fe1ad",
+    fontSize: 18,
   },
 });
